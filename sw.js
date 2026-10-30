@@ -1,7 +1,7 @@
 // SAFAR service worker — only used when self-hosted (same origin). Caches the
 // app shell for offline start. It does NOT cache live data (places, routes,
 // weather, prices): those must never be presented as current when offline.
-const CACHE = 'safar-shell-0.5.1';
+const CACHE = 'safar-shell-0.6.0';
 const SHELL = ['./index.html', './manifest.webmanifest'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
